@@ -12,11 +12,12 @@ yarn add shell-commands
 
 ## Use
 
-```
-import {run} from 'shell-commands';
+```ts
+import {run} from './index';
 
-await run(`
-mkdir temp
-rmdir temp
+run(`
+  mkdir temp
+  ls -l
+  rmdir temp
 `);
 ```

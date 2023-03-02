@@ -2,8 +2,10 @@
   "name": "shell-commands",
   "license": "MIT",
   "version": "0.1.0",
+  "main": "lib/index.js",
+  "module": "src/index.ts",
   "scripts": {
-    "prepublishOnly": "tsc",
+    "prepublishOnly": "tsc src/index.ts --outDir lib",
     "test": "ts-node src/test.ts"
   },
   "devDependencies": {
