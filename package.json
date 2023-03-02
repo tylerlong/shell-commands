@@ -1,0 +1,15 @@
+{
+  "name": "shell-commands",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "test": "ts-node src/test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.4",
+    "gts": "^3.1.1",
+    "typescript": "^4.9.5",
+    "yarn-upgrade-all": "^0.7.2"
+  }
+}
