@@ -1,12 +1,15 @@
 {
   "name": "shell-commands",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/index.js",
-  "module": "src/index.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "prepublishOnly": "tsc src/index.ts --outDir lib",
+    "prepublishOnly": "tsc src/index.ts --declaration --outDir lib",
     "test": "ts-node src/test.ts"
+  },
+  "dependencies": {
+    "color-loggers": "^0.1.3"
   },
   "devDependencies": {
     "@types/node": "^18.14.4",
