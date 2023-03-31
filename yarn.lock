@@ -315,6 +315,11 @@ color-loggers@^0.1.3:
   resolved "https://registry.yarnpkg.com/color-loggers/-/color-loggers-0.1.3.tgz#222b5cb8f980ad73e040d3c6f690d7fc77d242f5"
   integrity sha512-drMxHb4fF/z4xkPC+pczqyqBcZCivyO9w0STGnDLwHiHOLeMANw0KKKl7Kq26jkMIzkTQJKKdPdqTGihNnFN3A==
 
+color-loggers@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/color-loggers/-/color-loggers-0.2.0.tgz#7b142cc18a239fe5285480ce0d8346494c22e861"
+  integrity sha512-Hd0P3uyPhRJS6JgVVEtOFshtahqtqiPbI8VnghcPB+nOcusoWgpkyqKf5tQpMw9mvzqmW790qya+fctSoD9Y1w==
+
 color-name@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
