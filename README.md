@@ -38,3 +38,26 @@ drwxr-xr-x    2 tyler.liu  staff     64 Mar  2 10:41 temp
  [Info]: rmdir temp
  [Done]: rmdir temp
 ```
+
+
+## Special case
+
+I use yarn to run the following script
+
+```ts
+run('npm publish')
+```
+
+Always got the following error
+
+```
+This command requires you to be logged in to https://registry.yarnpkg.com
+```
+
+The solution is 
+
+```ts
+yarn config set registry https://registry.npmjs.org
+```
+
+Or you could use `npx` to run the command.
