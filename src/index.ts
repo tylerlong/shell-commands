@@ -1,9 +1,8 @@
 import { spawn } from 'child_process';
-import { Blue, Green, Red } from 'color-loggers';
+import { Blue, Green } from 'color-loggers';
 
 const info = new Blue('[Start]:');
 const success = new Green('[Done]:');
-const error = new Red('[Error]:');
 
 export const run = async (text: string) => {
   const commands = text
@@ -12,13 +11,8 @@ export const run = async (text: string) => {
     .filter((command) => command !== '');
   for (const command of commands) {
     info.log(command);
-    try {
-      await runOne(command);
-      success.log(command);
-    } catch (code) {
-      error.log(`exit code is ${code}`);
-      break;
-    }
+    await runOne(command);
+    success.log(command);
   }
 };
 
