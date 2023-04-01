@@ -59,5 +59,3 @@ The solution is
 ```ts
 yarn config set registry https://registry.npmjs.org
 ```
-
-Or you could use `npx` to run the command.
