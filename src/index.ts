@@ -9,22 +9,31 @@ export const run = async (text: string) => {
     .split('\n')
     .map((command) => command.trim())
     .filter((command) => command !== '');
+  let output = '';
   for (const command of commands) {
     info.log(command);
-    await runOne(command);
+    output = await runOne(command);
     success.log(command);
   }
+  return output;
 };
 
-const runOne = (_command: string) => {
+const runOne = (_command: string): Promise<string> => {
   const commands = _command.split(/\s+/);
   const command = commands[0];
   const args = commands.slice(1);
-  const childProcess = spawn(command, args, { stdio: 'inherit', shell: true });
-  return new Promise((resolve, reject) => {
+  const childProcess = spawn(command, args, { stdio: ['inherit', 'pipe', 'inherit'], shell: true });
+  return new Promise<string>((resolve, reject) => {
+    const output: string[] = [];
+    childProcess.stdout?.on('data', (data) => {
+      const temp = data.toString();
+      output.push(temp);
+      console.log(temp);
+    });
     childProcess.once('exit', (code) => {
+      childProcess.stdout?.removeAllListeners();
       if (code === 0) {
-        resolve(code);
+        resolve(output.join(''));
       } else {
         reject(code);
       }
