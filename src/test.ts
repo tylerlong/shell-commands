@@ -6,7 +6,9 @@ const main = async () => {
     ls -l
     rmdir temp
     echo "hello" && echo "world" && echo "again"
+    mkdir temp
+    rmdir temp
   `);
-  console.log('Final output:', output);
+  console.log('Last output:', output);
 };
 main();

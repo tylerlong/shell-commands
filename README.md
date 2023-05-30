@@ -39,6 +39,24 @@ drwxr-xr-x    2 tyler.liu  staff     64 Mar  2 10:41 temp
  [Done]: rmdir temp
 ```
 
+## Capture the last command output
+
+```ts
+import { run } from './index';
+
+const main = async () => {
+  const lastOutput = await run(`
+    mkdir temp
+    ls -l
+    rmdir temp
+  `);
+  console.log(lastOutput);
+}
+main();
+```
+
+In the example above, we captured the output of the command `ls  -l` since the last command `rmdir temp` outputs nothing.
+
 
 ## Special case
 

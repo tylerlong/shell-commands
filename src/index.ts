@@ -12,7 +12,10 @@ export const run = async (text: string) => {
   let output = '';
   for (const command of commands) {
     info.log(command);
-    output = await runOne(command);
+    const temp = await runOne(command);
+    if (temp !== '') {
+      output = temp;
+    }
     success.log(command);
   }
   return output;
