@@ -28,7 +28,7 @@ const runOne = (_command: string): Promise<string> => {
     childProcess.stdout?.on('data', (data) => {
       const temp = data.toString();
       output.push(temp);
-      console.log(temp);
+      process.stdout.write(temp);
     });
     childProcess.once('exit', (code) => {
       childProcess.stdout?.removeAllListeners();
