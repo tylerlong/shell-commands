@@ -6,6 +6,7 @@ const main = async () => {
     ls -l
     rmdir temp
     echo "hello" && echo "world" && echo "again"
+    # this is a comment
     mkdir temp
     rmdir temp
   `);

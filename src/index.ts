@@ -8,7 +8,8 @@ export const run = async (text: string) => {
   const commands = text
     .split('\n')
     .map((command) => command.trim())
-    .filter((command) => command !== '');
+    .filter((command) => command !== '')
+    .filter((command) => !command.startsWith('#'));
   let output = '';
   for (const command of commands) {
     info.log(command);
