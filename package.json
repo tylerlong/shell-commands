@@ -10,21 +10,21 @@
     "test": "ts-node src/test.ts"
   },
   "dependencies": {
-    "color-loggers": "^0.2.0"
+    "color-loggers": "^0.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.2.5",
-    "@typescript-eslint/eslint-plugin": "^5.59.8",
-    "@typescript-eslint/parser": "^5.59.8",
-    "eslint": "^8.41.0",
-    "eslint-config-alloy": "^5.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.8",
-    "sort-package-json": "^2.4.1",
-    "ts-node": "^10.9.1",
-    "ttpt": "^0.6.3",
-    "typescript": "^5.0.4",
+    "@types/node": "^22.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "^9.8.0",
+    "eslint-config-alloy": "^5.1.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "sort-package-json": "^2.10.0",
+    "ts-node": "^10.9.2",
+    "ttpt": "^0.10.2",
+    "typescript": "^5.5.4",
     "yarn-upgrade-all": "^0.7.2"
   }
 }
