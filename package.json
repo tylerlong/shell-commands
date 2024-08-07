@@ -16,7 +16,7 @@
     "@types/node": "^22.1.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
-    "eslint": "^9.8.0",
+    "eslint": "8.57.0",
     "eslint-config-alloy": "^5.1.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -26,5 +26,10 @@
     "ttpt": "^0.10.2",
     "typescript": "^5.5.4",
     "yarn-upgrade-all": "^0.7.2"
+  },
+  "yarn-upgrade-all": {
+    "ignore": [
+      "eslint"
+    ]
   }
 }
