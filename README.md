@@ -77,3 +77,8 @@ The solution is
 ```ts
 yarn config set registry https://registry.npmjs.org
 ```
+
+
+## Limitations
+
+- The library does not support alias commands. For example, `python` is an alias of `python3`. You need to use `python3` instead of `python`.

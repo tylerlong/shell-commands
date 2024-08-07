@@ -14,6 +14,7 @@ const main = async () => {
   `);
   output = await run(`
     echo $HELLO
+    python3 --version
   `);
   console.log('Last output:', output);
 };

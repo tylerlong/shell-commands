@@ -27,7 +27,7 @@ const runOne = (_command: string): Promise<string> => {
   const commands = `${_command} && echo '${envSeparator}' && env`.split(/\s+/);
   const command = commands[0];
   const args = commands.slice(1);
-  const childProcess = spawn(command, args, { stdio: ['inherit', 'pipe', 'inherit'], shell: true });
+  const childProcess = spawn(command, args, { stdio: ['inherit', 'pipe', 'inherit'], shell: '/bin/zsh' });
   return new Promise<string>((resolve, reject) => {
     const output: string[] = [];
     const env: string[] = [];
