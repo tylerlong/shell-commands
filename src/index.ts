@@ -1,8 +1,8 @@
 import { spawn } from 'child_process';
 import { Blue, Green } from 'color-loggers';
 
-const info = new Blue('[Start]:');
-const success = new Green('[Done]:');
+const info = new Blue('[Start]: ');
+const success = new Green('[Done]: ');
 
 export const run = async (text: string) => {
   const commands = text

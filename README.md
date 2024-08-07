@@ -11,7 +11,7 @@ yarn add shell-commands
 ## Use
 
 ```ts
-import { run } from './index';
+import { run } from 'shell-commands';
 
 run(`
   mkdir temp
@@ -42,7 +42,7 @@ drwxr-xr-x    2 tyler.liu  staff     64 Mar  2 10:41 temp
 ## Capture the last command output
 
 ```ts
-import { run } from './index';
+import { run } from 'shell-commands';
 
 const main = async () => {
   const lastOutput = await run(`
@@ -77,6 +77,23 @@ The solution is
 ```ts
 yarn config set registry https://registry.npmjs.org
 ```
+
+## Environment Variables
+
+You may set environment variables in the command string.
+
+```ts
+import { run } from 'shell-commands';
+
+await run(`
+  export HELLO='world'
+  echo $HELLO
+`);
+await run(`echo $HELLO`);
+```
+
+Please note that the environment variables are only available in the same Node.js process.
+It will not change your current shell environment. It will not change your Operating System environment.
 
 
 ## Limitations
