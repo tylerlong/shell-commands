@@ -1,7 +1,7 @@
 import { run } from './index';
 
 const main = async () => {
-  const output = await run(`
+  let output = await run(`
     mkdir temp
     ls -l
     rmdir temp
@@ -9,6 +9,11 @@ const main = async () => {
     # this is a comment
     mkdir temp
     rmdir temp
+    export HELLO='world'
+    echo $HELLO
+  `);
+  output = await run(`
+    echo $HELLO
   `);
   console.log('Last output:', output);
 };

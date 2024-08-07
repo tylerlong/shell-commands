@@ -22,21 +22,40 @@ export const run = async (text: string) => {
   return output;
 };
 
+const envSeparator = '<--env-->';
 const runOne = (_command: string): Promise<string> => {
-  const commands = _command.split(/\s+/);
+  const commands = `${_command} && echo '${envSeparator}' && env`.split(/\s+/);
   const command = commands[0];
   const args = commands.slice(1);
   const childProcess = spawn(command, args, { stdio: ['inherit', 'pipe', 'inherit'], shell: true });
   return new Promise<string>((resolve, reject) => {
     const output: string[] = [];
+    const env: string[] = [];
     childProcess.stdout?.on('data', (data) => {
-      const temp = data.toString();
-      output.push(temp);
-      process.stdout.write(temp);
+      const temp: string = data.toString();
+      if (env.length === 0) {
+        const tokens = temp.split(envSeparator);
+        output.push(tokens[0]);
+        process.stdout.write(tokens[0]);
+        if (tokens.length > 1) {
+          env.push(tokens[1]);
+        }
+      } else {
+        env.push(temp);
+      }
     });
     childProcess.once('exit', (code) => {
       childProcess.stdout?.removeAllListeners();
       if (code === 0) {
+        env
+          .join('')
+          .split('\n')
+          .forEach((line) => {
+            const tokens = line.split('=');
+            if (tokens.length > 1) {
+              process.env[tokens[0]] = tokens[1];
+            }
+          });
         resolve(output.join(''));
       } else {
         reject(code);
